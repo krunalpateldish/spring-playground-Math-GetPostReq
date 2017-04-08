@@ -57,7 +57,6 @@ public class MathService {
 
 
     @PostMapping("/math/sum")
-    @RequestMapping
     public int calculatePost(@RequestParam(value = "n") List<String> requestParams) {
 
         String values = " ";
@@ -77,6 +76,18 @@ public class MathService {
         return total;
     }
 
+
+    // Volume Calculation using PathVariable
+    @GetMapping("/math/volume/{a}/{b}/{c}")
+    public int calculateVolume(@PathVariable(value="a") String a, @PathVariable(value="b") String b, @PathVariable(value="c") String c) {
+
+        int l = Integer.parseInt(a);
+        int w = Integer.parseInt(b);
+        int h = Integer.parseInt(c);
+
+        int volume =  l*w*h;
+    return volume;
+    }
 
 
 }
