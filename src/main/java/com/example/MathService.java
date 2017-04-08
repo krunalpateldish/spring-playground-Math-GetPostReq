@@ -89,5 +89,47 @@ public class MathService {
     return volume;
     }
 
+    @PostMapping("/math/area")
+    public String calculateArea( @RequestParam Map<String,String> requestParams) {
+
+        double pi = 3.141592653589793;
+        double area = 0;
+        double radius =0;
+        double height =0;
+        double width =0;
+
+        String operation = requestParams.get("type");
+        System.out.println("radius is : "+" "+ operation);
+
+        if(requestParams.get("radius")!= null) {
+             radius = Double.parseDouble(requestParams.get("radius"));
+        }
+        if(requestParams.get("height")!= null) {
+            height = Double.parseDouble(requestParams.get("height"));
+        }
+        if(requestParams.get("width")!= null) {
+            width = Double.parseDouble(requestParams.get("width"));
+        }
+
+        if(operation.equalsIgnoreCase("circle")){
+            if(requestParams.get("radius")!= null){
+                area = pi * radius * radius;
+                return String.format("Area of a radius %f  circle is %f",radius,area);
+            }else{
+               return "Invalid";
+            }
+        }else if(operation.equalsIgnoreCase("rectangle")){
+            if((requestParams.get("width")!= null)&&requestParams.get("height")!= null){
+                area = width * height;
+                return String.format("Area of a %f X %f rectangle is %f",width, height,area);
+            }else{
+                return "Invalid";
+            }
+        }
+        else{
+            return "Invalid";
+        }
+
+    }
 
 }
