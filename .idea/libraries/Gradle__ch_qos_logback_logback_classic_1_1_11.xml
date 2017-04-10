@@ -3,7 +3,11 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.11/ccedfbacef4a6515d2983e3f89ed753d5d4fb665/logback-classic-1.1.11.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'" />
+      <root url="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.0.pr2'" />
+      <root url="https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.0.pr2'" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.11/2a2f78be7ef674b6486f7b5463f05f40da5e163/logback-classic-1.1.11-sources.jar!/" />
     </SOURCES>
