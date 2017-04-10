@@ -11,20 +11,12 @@ public class Flights {
 
     private Date departs;
     private Tickets ticket;
-    private double price;
+
 
   @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd hh:mm", timezone="America/Denver")
     public Date getDeparts() { return departs; }
 
     public void setDeparts(Date dateTime) { this.departs = dateTime; }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     public Tickets getTicket() {
         return ticket;
@@ -49,10 +41,19 @@ public class Flights {
     }
     static class Tickets {
         private List<Person> passengers;
+        private double price;
 
         public List<Person> getPassengers() { return passengers; }
 
         public void setPassengers(List<Person> passengers) { this.passengers = passengers; }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public void setPrice(double price) {
+            this.price = price;
+        }
 
     }
 

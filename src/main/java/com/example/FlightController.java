@@ -1,15 +1,10 @@
 package com.example;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -36,8 +31,8 @@ public class FlightController {
         flight1.setDeparts(date);
         personList.add(person1);
         tickets.setPassengers(personList);
+        tickets.setPrice(200);
         flight1.setTicket(tickets);
-        flight1.setPrice(200);
         return Arrays.asList(flight1);
     }
 
@@ -68,14 +63,18 @@ public class FlightController {
         personList2.add(person2);
         tickets1.setPassengers(personList1);
         tickets2.setPassengers(personList2);
+        tickets1.setPrice(200);
+        tickets2.setPrice(400);
         flight1.setTicket(tickets1);
         flight2.setTicket(tickets2);
-        flight1.setPrice(200);
-        flight2.setPrice(400);
+
 
 
         return Arrays.asList(flight1,flight2);
 
     }
+
+
+
 
 }
