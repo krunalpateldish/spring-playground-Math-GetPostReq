@@ -28,10 +28,22 @@ public class FlightControllerTest {
     public void getFlightsJSONTest() throws Exception {
 
         this.mvc.perform(
-                get("/flights")
+                get("/flights/flight")
                         .accept(MediaType.APPLICATION_JSON_UTF8)
                         .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
                 .andExpect(content().json("[{\"departs\":\"2017-04-21 02:34\",\"ticket\":{\"passengers\":[{\"firstName\":\"Will\",\"lastName\":\"Arthur\"}]},\"price\":200.0}]"));
     }
+
+    @Test
+    public void getMultipleFlightsJSONTest() throws Exception {
+
+        this.mvc.perform(
+                get("/flights")
+                        .accept(MediaType.APPLICATION_JSON_UTF8)
+                        .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk())
+                .andExpect(content().json("[{\"departs\":\"2017-04-21 02:34\",\"ticket\":{\"passengers\":[{\"firstName\":\"Will\",\"lastName\":\"Arthur\"}]},\"price\":200.0},{\"departs\":\"2017-04-21 02:34\",\"ticket\":{\"passengers\":[{\"firstName\":\"Kimi\",\"lastName\":\"Raikkonen\"}]},\"price\":400.0}]"));
+    }
 }
+
