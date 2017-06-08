@@ -11,7 +11,7 @@ public class Flights {
 
     private Date departs;
     private Tickets ticket;
-
+//    private List<Tickets> tickets;
 
   @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd hh:mm", timezone="America/Denver")
     public Date getDeparts() { return departs; }
